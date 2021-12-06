@@ -1,0 +1,107 @@
+//1.seerToMon Problem 1. solution----
+//declaring the function
+function seerToMon(seers) {
+//for bonus marks error case
+if (typeof seers != 'number') {
+return 'Please give a number value';
+}
+//for bonus marks error case
+if (seers <= 0) {
+return 'Please give a positive value greater than 0';
+}
+//formula with calculation of seers in mon
+var mon = seers / 40;
+return mon;
+}
+//variable declaration for giving input in the parameter
+let mon = seerToMon(80);
+//show the output in mon
+console.log(mon);
+//for bonus marks show the type of output
+console.log(typeof (mon));
+//2.totalSales Problem 2. solution----
+//declaring the function
+function totalSales(shirtQuantity, pantQuantity, shoeQuantity) {
+//setting the cost for the per product by variable
+const perShirtTaka = 100;
+const perPantTaka = 200;
+const perShoeTaka = 500;
+//taka calculation of the induvidual products
+const shirtTakaTotal = shirtQuantity * perShirtTaka;
+const pantTakaTotal = pantQuantity * perPantTaka;
+const shoeTakaTotal = shoeQuantity * perShoeTaka;
+//adding all taka as totaltaka
+const totalTaka = shirtTakaTotal + pantTakaTotal + shoeTakaTotal;
+return totalTaka;
+}
+//variable declaration for giving input in the parameter
+const totalSalesInTaka = totalSales(2, 1, 1);
+//show the output in total
+console.log(totalSalesInTaka);
+//for bonus marks show the type of output
+console.log(typeof (totalSalesInTaka));
+//3.deliveryCost Problem 3. solution----
+//declaring the function
+function deliveryCost(shirts) {
+//for bonus marks error case
+if (typeof shirts != 'number') {
+return 'Please give a number value';
+}
+//for bonus marks error case
+if (shirts <= 0) {
+return 'Please give a positive value greater than 0';
+}
+//setting the delivery cost for the shirts by variable
+const shirtsDeliveryCostFirst100 = 100;
+const shirtsDeliveryCostSecond100 = 80;
+const shirtsDeliveryCostRest = 50;
+//condition for the first 100 shirts with calculation
+if (shirts <= 100) {
+const count = shirts * shirtsDeliveryCostFirst100;
+return count;
+}
+//condition for the second 100 shirts with calculation
+else if (shirts <= 200) {
+const first100Shirts = 100 * shirtsDeliveryCostFirst100;
+const restShirts = shirts - 100;
+const second100Shirts = restShirts * shirtsDeliveryCostSecond100;
+const totalCost = first100Shirts + second100Shirts;
+return totalCost;
+}
+//condition for rest of the shirts with calculation
+else {
+const first100Shirts = 100 * shirtsDeliveryCostFirst100;
+const second100Shirts = 100 * shirtsDeliveryCostSecond100;
+const restShirts = shirts - 200;
+const RestOfTheShirts = restShirts * shirtsDeliveryCostRest;
+const totalCost = first100Shirts + second100Shirts + RestOfTheShirts;
+return totalCost;
+}
+}
+//variable declaration for giving input in the parameter
+const totalDeliveryCost = deliveryCost(250);
+//show the output in total
+console.log(totalDeliveryCost);
+//for bonus mark show the type of output
+console.log(typeof (totalDeliveryCost));
+//4.perfectFriend Problem 4. solution----
+//taking an array as my friends name
+const friendsNameArray = perfectFriend(['Shorif', 'Masum', 'Dip', 'Shuvo', 'Prince', 'Rimon', 'Efty']);
+//declaring the function
+function perfectFriend(array) {
+//taking a variable for returning the 5 character friend name
+let char5FriendName;
+//using loop and condition for searching out 5 character friend name
+for (let i = 0; i < array.length; i++) {
+const name = array[i];
+if (name.length == 5) {
+char5FriendName = name;
+break;
+}
+}
+return char5FriendName;
+}
+//showing the output of 5 character friend name
+console.log(friendsNameArray);
+//for bonus mark show the type of output
+console.log(typeof (friendsNameArray));
